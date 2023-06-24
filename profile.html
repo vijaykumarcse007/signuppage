@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        *{
+            background-color: #773838;
+        }
+        button{
+            display: flex;
+            margin-left: 90vw;
+            justify-content: center;
+            background-color: red;
+            color: aliceblue;
+            width: 6vw;
+            height: 30px;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <center><h3>Profile</h3></center>
+    <button onclick="logout()">Logout</button>
+    <div>
+        <h3>Welcome</h3>
+        <h4>Name:
+            <script>
+                document.write(localStorage.getItem("name"))
+            </script>
+        </h4>
+    </div>
+    <script>
+        function logout(){
+            localStorage.removeItem("name")
+            localStorage.removeItem("email")
+            alert("logged out")
+            window.location.href="login.html"
+        }
+        
+    </script>
+</body>
+</html>
